@@ -11,4 +11,4 @@ flickr = flickrapi.FlickrAPI(api_key, cache=True)
 photos = flickr.photos_search(tags=["Denmark"], format='json', bbox=[8, 13, 55, 58], page=2)
 jdata = json.loads(photos[14:-1])
 
-print json.dumps(jdata, separators = (',' , ':'), indent = 4)
+print json.dumps(jdata, separators=(',', ':'), indent = 4)
