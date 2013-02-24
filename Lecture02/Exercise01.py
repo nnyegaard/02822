@@ -61,8 +61,9 @@ def newBarPlot():
 
 
 if __name__ == '__main__':
-    #showData()
-    #linePlot()
+    showData()
+    linePlot()
+    barPlot()
     newBarPlot()
 
 
