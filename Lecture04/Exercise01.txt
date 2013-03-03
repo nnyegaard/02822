@@ -1,0 +1,29 @@
+1. Exercise 1
+
+1.1 Part 1 - Explain the concept of classification. Come up with an example where one can use a classifier. What kind of features are meaningful to use in this example?
+Classification is the concept of grouping data into categories to learn what that data is. Examples has been given using it as a spam filter, but it could
+ also be used as determining what genre a book is.
+
+
+1.2 Part 2 - What are the features we use for document classification?
+A feature is anything that you can determine as being either present or absent in the item.
+ When considering documents for classification, the items are the documents and the features are the words in the document.
+
+
+1.3 Part 3 - Explain the process of calculating (conditional) probabilities. You may construct an example with two features and two categories.
+Pr(A|B) is the formal writing of the probability of A given B.
+So if we have a text and we want to see if given words are in a text we would write it as Pr(word|texts), or if we use our spam filter example
+ we would write Pr(word|classification) where classification says if the word is a spam or non-spam word.
+
+1.4 Part 4 - Why do we need to start with a reasonable guess? Explain, for example with an equation, how to combine the assumed probability with the frequency (empirical probability).
+When using conditional probability we are very sensitive in the early state because the program has not learned much about the features
+ in the different classifications. So if a feature is very rare or has only been seen in one classification, it would be placed in that category wrongly.
+ To combat this the program needs to give each feature a assumed probability in the start.
+ Frequency = How many time we try to do the experiment, so P(A|B) = P(A,B)/P(B) <==> Nr of times-P(A,B)/Nr of times-P(B)
+
+1.5 Part 5 - What is naive about the naïve Bayes classifier? Is the assumption reasonable in the example you came up with above?
+This classifier is naive because it assumes there is no relation between features in a category.
+
+1.6 Part 6 - Give an example of the use of Bayes’ theorem. Explain how we calculate/set each term in the Category and Document setting using the training data and the category prior. Does the category prior have the same type of effect as the assumed probability?
+
+
