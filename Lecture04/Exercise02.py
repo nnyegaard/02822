@@ -21,8 +21,8 @@ def getwords(doc):
     return dict([(w, 1) for w in words])
 
 
-class classifier:
-    def __init__(self, getfeatures, filename=None):
+class classifier(object):
+    def __init__(self, getfeatures):
         self.thresholds = {}
         # Counts of feature/category combinations
         self.fc = {}
@@ -74,7 +74,7 @@ class classifier:
             return 0
         return self.fcount(f, cat) / self.catcount(cat)
 
-    def weightedprob(self, f, cat, prf, weight=1, ap=0.5):
+    def weightedprob(self, f, cat, prf, weight=1, ap=0.7):
         basicprob = prf(f, cat)
         totals = sum([self.fcount(f, c) for c in self.categories()])
         bp = ((weight * ap) + (totals * basicprob)) / (weight + totals)
