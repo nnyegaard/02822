@@ -12,7 +12,7 @@ def get_photo_data():
     print "Downloading inland photos"
     #bbox gives 250 per page
     photos_inland = flickr.photos_search(tags=['forest', 'nature', 'grass', 'graes', 'skov'], format='json',
-                                             bbox=[8, 55, 13, 58], extras='geo')
+                                         bbox=[8, 55, 13, 58], extras='geo')
     jdata_indland += (json.loads(photos_inland[14:-1])["photos"]["photo"])
 
     print jdata_indland[0]
@@ -34,20 +34,22 @@ def load_data_from_file(): # Return a str with the data
         print e
 
 
-
 my_photo_data = load_data_from_file()
+
 
 def print_my_data():
     print "My data:"
     print my_photo_data
 
+
 for dic in json.loads(my_photo_data):
     print  dic
-
-
+print
+print "One"
+print json.loads(my_photo_data)[0]
 if __name__ == "__main__":
     print
-    #get_photo_data()
+    get_photo_data()
     #print photo_data
     #print
     #flickrtree = treepredict.buildtree(photo_data, scoref=treepredict.variance)
